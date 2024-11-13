@@ -1,0 +1,13 @@
+<div class="sidenav-header">
+    <img [width]="profileImageSize()" [height]="profileImageSize()" src="/assets/user-image.png" alt="">
+    <div class="header-text" *ngIf="!sidenavCollapsed()">
+        <h2>Your Channel</h2>
+        <p>Ahmed Magdy</p>
+    </div>
+</div>
+<mat-nav-list>
+    <a mat-list-item *ngFor="let item of menuItems()" [routerLink]="item.route" routerLinkActive #rla="routerLinkActive" [activated]="rla.isActive">
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+        <span matListItemTitle>{{item.label}}</span>
+    </a>
+</mat-nav-list>
